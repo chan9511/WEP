@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 우선순위 연습</title>
+    <style>
+        .style {
+            color: red;
+        }
+        #style {
+            color: green;
+        }
+        p {
+            color: dodgerblue;
+        }
+      /* 앞에 코드가 있어도 무시하고 important한 놈이 우선예약 */
+      /* 인라인(그냥 p안에 바로 때려박기)
+      -> id(#) 
+      -> 클래스(마침표)
+      -> 태그(p) 순으로 */
+    </style>
+  </head>
+  <body>
+    <p>카직스연습중</p>
+    <p class="style">카서스연습중</p>
+    <p class="style" id="style">탈리야연습중</p>
+    <p class="style" id="style" style="color: coral;">람머스연습중</p>
+    <div>
+        부모
+        <div>
+            자식
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 실습</title>
+  </head>
+  <body>
+    <div>
+      
+        
+      <fieldset>
+        <legned>로그인 정보</legned>
+        <ul>
+          <li style="list-style-type: none">
+            <input type="hidden" id="hidden" value="서버에 전달할 값" />
+          </li>
+          <li style="list-style-type: none">
+            <label for="user-id">아이디</label>
+            <input
+              type="text"
+              id="user-id"
+              placeholder="아이디를 입력해주세요.">
+              <!-- 라벨링이랑 id를 맞춰주면 태그만 눌러도 자동으로 칸으로 넘어감 -->
+            
+          </li>
+          <li style="list-style-type: none">
+            <label for="birth">생년월일</label>
+            <input type="text" birth="text" value="19" />
+          </li>
+          <li style="list-style-type: none">
+            <label for="tel">전화번호</label>
+            <input
+              type="tel"
+              id="tel"
+              placeholder="전화번호"
+              pattern="[0-1]{3}-[0-9]{4}-0-9]{4}"
+            />
+          </li>
+          <li style="list-style-type: none">
+            <label for="number" id="number">나이</label>
+            <input type="number" placeholder="나이 입력" pattern="[0-99]{2}" />
+          </li>
+          <li style="list-style-type: none">
+            <label for="user-pw">패스워드</label>
+            <input
+              type="text"
+              pw="user-pw"
+              placeholder="비밀번호를 입력해주세요."
+            />
+          </li>
+          <li style="list-style-type: none">
+            <label for="number">나이스텝</label>
+            <input type="number" id="number" min="0" max="80" step="10" />
+            <!-- 0~80까지 10씩 늘어나는 스크롤이 생김 -->
+          </li>
+          <li style="list-style-type: none">
+            <label for="range">통장잔고</label>
+            <input
+              type="range"
+              id="range"
+              min="0"
+              max="999999999"
+              step="1000"
+            />
+          </li>
+          <li style="list-style-type: none">
+            <label for="radio">성별</label>
+            <input type="radio" id="radio" name="gender" />남자
+            <input type="radio" id="radio" name="gender" />여자
+            <!-- 체크란을 만드는 툴 -->
+          </li>
+          <li style="list-style-type: none">
+            <label for="radio">성별</label>
+            <input type="radio" id="radio" name="gender" />남자
+            <input type="radio" id="radio" name="gender" checked />여자
+            <!-- 미리 체크 되있게끔 checked -->
+            <!-- radio는 하나만 선택가능 -->
+          </li>
+          <li style="list-style-type: none">
+            <label for="checkbox">선호 포지션</label>
+            <br />
+            <input type="checkbox" id="checkbox" name="Line" checked/>탑
+            <input type="checkbox" id="checkbox" name="Line" />정글
+            <input type="checkbox" id="checkbox" name="Line" />미드
+            <input type="checkbox" id="checkbox" name="Line" />원딜
+            <input type="checkbox" id="checkbox" name="Line" />서폿
+            <!-- 체크란을 checkbox = 네모칸 -->
+            <!-- checkbox는 복수 선택가능 -->
+          </li>
+          <li style="list-style-type: none;">
+            <label for="date">생년월일</label>
+            <input type="date" id="date">
+            <!-- month, week, time, datetime-local(날짜시간같이),date -->
+          </li>
+          <li style="list-style-type: none;">
+            <label for="date">Job</label>
+            <select name="" id="">
+              <optgroup label="수입0원">
+              <option value="백조">백조</option>
+              <option value="무직">무직</option>
+              <option value="백수">백수</option>
+              <option value="백숙">백숙</option>
+              <option value="노숙자">노숙자</option>
+            </optgroup>
+            </select>
+            <!-- (선택박스) 예로 이메일처럼 원하는 이메일 찾기기능 스크롤내려서 -->
+            <!-- value는 서버로 전해지는 데이터명 -->
+          </li>
+          <li style="list-style-type: none;">
+            <label for="date">선호 걸그룹 멤버</label>
+            <select name="" id="">
+              <optgroup label="르세라핌">
+              <option value="서버전송명1">카즈하</option>
+              <option value="서버전송명2">김채원</option>
+              <option value="서버전송명3">사쿠라</option>
+              <option value="서버전송명4">홍은채</option>
+              <option value="서버전송명5">허윤진</option>
+            </optgroup>
+            <optgroup label="레드벨벳">
+              <option value="서버전송명6">웬디</option>
+              <option value="서버전송명7">슬기</option>
+              <option value="서버전송명8">조이</option>
+              <option value="서버전송명9">예리</option>
+              <option value="서버전송명10">아이린</option>
+            </select>
+            <!-- 그룹핑을 하여 르세라핌멤버 ~~~~ 레드벨벳 ~~~~ 이렇게  -->
+          </li>
+          <li style="list-style-type: none;">
+            <label for="intro">1000자 자기소개시작</label> <br>
+          <textarea name="" id="" cols="50" rows="20"></textarea>
+          </li>
+        </ul>
+      </fieldset>
+      <hr />
+      <!-- 가입하기 취소하기 중간으로 배치하기 -->
+      <div style="text-align: center;">
+      <!-- 사용자 입력 내용을 서버로 전송 -->
+      <button type="submit">가입하기</button>
+
+      <!-- 사용자 입력 내용 전부 삭제 -->
+      <button type="reset">취소하기</button>
+    
+    </div>
+  
+    
+
+    <div>
+      <form action="#">
+        <fieldset>
+          <legend>개인 정보</legend>
+          <ul>
+            <li>
+              <label for="name">이름</label>
+              <input type="text" id="name" placeholder="이름.." />
+            </li>
+            <li>
+              <label for="mail">메일 주소</label>
+              <input type="email" id="mail" placeholder="메일주소" />
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

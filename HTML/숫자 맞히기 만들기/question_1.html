@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>숫자 맞히기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="question_1.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>숫자 맞히기 게임</h1>
+      <p>1에서 100 사이의 수를 입력하세요.</p>
+      <form>
+        <label><input type="text" id="try" autofocus /></label>
+        <input type="button" value="확인" id="check" class="btn btn-1" />
+        <input type="reset" value="다시" id="reset" class="btn btn-2" />
+      </form>
+      <br />
+      <div id="number" class="info"></div>
+      <div id="display" class="output"></div>
+      <div id="counter" class="footer"></div>
+    </div>
+    <script>
+      var inputValue = document.getElementById("try");
+      var checkButton = document.getElementById("check");
+      var resetButton = document.getElementById("reset");
+      var numberDisplay = document.getElementById("number");
+      var displayOutput = document.getElementById("display");
+      var counterDisplay = document.getElementById("counter");
+
+      var answer = Math.floor(Math.random() * 100) + 1; // 1~100 사이의 랜덤 숫자 생성
+      var count = 0; // 시도 횟수 초기화
+
+      checkButton.addEventListener("click", function () {
+        var guess = parseInt(inputValue.value); // 입력된 값 가져오기
+
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+          alert("1에서 100 사이의 수만 입력해주세요.");
+          return;
+        }
+
+        count++; // 시도 횟수 증가
+
+        if (guess > answer) {
+          displayOutput.textContent = "DOWN!!";
+        } else if (guess < answer) {
+          displayOutput.textContent = "UP!!";
+        } else {
+          displayOutput.textContent = "맞혔습니다!!";
+          inputValue.disabled = true; // 맞혔을 때 입력 필드 비활성화
+          checkButton.disabled = true; // 맞혔을 때 확인 버튼 비활성화
+        }
+
+        numberDisplay.textContent = "방금 입력한 숫자: " + guess;
+        counterDisplay.textContent = "시도 횟수: " + count + "회";
+      });
+
+      resetButton.addEventListener("click", function () {
+        inputValue.value = ""; // 입력 필드 초기화
+        inputValue.disabled = false; // 입력 필드 활성화
+        checkButton.disabled = false; // 확인 버튼 활성화
+        displayOutput.textContent = ""; // 출력 초기화
+        numberDisplay.textContent = ""; // 방금 입력한 숫자 초기화
+        count = 0; // 시도 횟수 초기화
+        counterDisplay.textContent = ""; // 시도 횟수 표시 초기화
+        answer = Math.floor(Math.random() * 100) + 1; // 새로운 랜덤 숫자 생성
+      });
+    </script>
+  </body>
+</html>
